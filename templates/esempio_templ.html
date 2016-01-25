@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{{ sezione.titolo }}{% endblock %}
+
+{% block content %}
+    <h1>{{ sezione.titolo }}</h1>
+    {% for item in variabile %}
+        <h2>
+            <a href="{{ item.get_absolute_url }}">
+                {{ item.descrizione }}
+            </a>
+        </h2>
+        <p>{{ item.info|truncatewords:"30" }}</p>
+    {% endfor %}
+{% endblock %}
