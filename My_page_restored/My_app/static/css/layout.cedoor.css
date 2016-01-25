@@ -202,7 +202,7 @@ blockquote {
     border-top: 1px solid #ddddbb;
     border-bottom: 1px solid #ddddbb;
     margin: 5px;
-    background-image: url(../images/openquote1.gif);
+    background-image: url(../img/openquote1.gif);
     background-position: top left;
     background-repeat: no-repeat;
     text-indent: 23px;
@@ -210,7 +210,7 @@ blockquote {
 
  blockquote span {
     display: block;
-    background-image: url(../images/closequote1.gif);
+    background-image: url(../img/closequote1.gif);
     background-repeat: no-repeat;
     background-position: bottom right;
  }
