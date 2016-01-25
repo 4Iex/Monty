@@ -1,0 +1,608 @@
+/*
+ *  Copyright (c) 2015 Omar Desogus
+ *  https://github.com/cedoor/PersonalPage
+ *
+ *  The MIT License (MIT)
+ *  http://www.opensource.org/licenses/MIT
+ */
+
+/* Class with property for buttons */
+
+.lodmyActive:active {
+    position: relative;
+    top: 1px;
+}
+
+/* Text width & decorations */
+
+.h1 { font-size: 32px; }
+.h15 {
+    font-size: 30px;
+    text-align: center;
+    color: #A75E14;
+}
+.h25 {
+    font-size: 24px;
+}
+
+/* Shades & backgrounds */
+
+.shades1 {
+    background: -webkit-linear-gradient(top,  #4D4D4D,  #808080);
+    background: -moz-linear-gradient(left,  #4D4D4D,  #808080);
+    background: -ms-linear-gradient(left,  #4D4D4D,  #808080);
+    background: -o-linear-gradient(left,  #4D4D4D,  #808080);
+}
+
+/* Style of scrollbar */
+
+.scrollbarStyle::-webkit-scrollbar-track, #documents::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: #f2f2f2;
+}
+
+.scrollbarStyle::-webkit-scrollbar, #documents::-webkit-scrollbar {
+	width: 10px;
+        background-color: #f2f2f2;
+}
+
+.scrollbarStyle::-webkit-scrollbar-thumb, #documents::-webkit-scrollbar-thumb {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: rgba(217,217,217,0.2);
+}
+
+.scrollbarStyle::-webkit-scrollbar-thumb:hover, #documents::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(217,217,217,0.2);
+}
+
+*:focus { outline: none }
+
+a:hover {
+    color: #b36b00;
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+    color: #004c4d;
+}
+
+html, body { height: 100% }
+
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    position:relative;
+    color: #4b4b4b;
+}
+
+#loading {
+    display: none;
+    position: absolute;
+    top: -10px;
+    left: 40px;
+}
+
+#myphoto {
+    margin-top: 10px;
+    margin-left: 60px;
+}
+
+header div {
+    position: relative;
+    bottom: 40px;
+    display: inline-block;
+    transition: background-color .50s;
+    margin-left: 70px;
+    border-radius: 10px;
+}
+
+.navOptions:hover {
+    border-radius: 10px;
+    background-color: #e6e6e6;
+}
+
+.navOptions {
+    display: inline-block;
+    cursor: pointer;
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    transition: border-radius .30s ease-in-out, background-color .30s ;
+}
+
+#content {
+    width: 950px;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -50px;
+}
+
+#page {
+    margin-top: 20px;
+}
+
+/* profile page */
+
+#profile {
+    margin-top: 5px;
+    height: 550px;
+    color: #4b4b4b;
+    border: 1px solid #dddddd;
+}
+#profile p {
+    color: #4b4b4b;
+}
+
+.links:hover {
+    border-color: #e2a64b;
+}
+
+.links {
+    text-align: center;
+    float: left;
+    margin-left: 43px;
+    margin-right: 43px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border-bottom: 2px solid #dddddd;
+    border-top: 2px solid #dddddd;
+    transition: border-color .50s ease-in-out;
+}
+
+.links img {
+    height: 55px;
+}
+
+.links p {
+    margin: 0;
+}
+
+.profileBoxs {
+    float: left;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 280px;
+    height: 310px;
+    padding: 10px;
+    border: 1px solid #cccccc;
+}
+
+.profileBoxs p.h25 {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.profileLine {
+    margin: 0;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.profileSubLine {
+    margin-left:30px;
+}
+
+.profileLineBrd {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dadada;
+}
+
+blockquote {
+    font: 15px/22px 'Raleway', sans-serif;
+    padding: 8px;
+    background-color: #f5f5eb;
+    border-top: 1px solid #ddddbb;
+    border-bottom: 1px solid #ddddbb;
+    margin: 5px;
+    background-image: url(../images/openquote1.gif);
+    background-position: top left;
+    background-repeat: no-repeat;
+    text-indent: 23px;
+}
+
+ blockquote span {
+    display: block;
+    background-image: url(../images/closequote1.gif);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+ }
+
+ .profileSkills {
+     font-size: 15px;
+     float: left;
+     padding: 6px;
+     margin: 4px;
+     padding-right: 12px;
+     padding-left: 12px;
+     background-color: #ececec;
+     border-radius: 10px;
+     border: 1px solid #d3d3d3;
+ }
+
+/* contactme page */
+
+#contactmeBox {
+    position: relative;
+    width: 500px;
+    margin: auto;
+    padding: 20px;
+    color: #4b4b4b;
+}
+
+#contactForm {
+    margin-bottom: -30px;
+    padding: 50px;
+}
+
+#contactForm tr {
+    height: 40px;
+}
+
+#contactForm input:hover, #contactForm textarea:hover {
+    border-radius: 0;
+    border-color: #929292;
+}
+
+#contactForm input:focus , #contactForm textarea:focus {
+    border-color: #929292;
+    border-radius: 0;
+    background-color: #fbf9f4;
+}
+
+#contactForm input, #contactForm textarea {
+    color: #4b4b4b;
+    padding: 3px;
+    border: 1px solid #bfbfbf;
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    transition: border-radius .50s ease-in-out,
+                border-color .50s ease-in-out,
+                background-color .50s ease-in-out;
+}
+
+#contactForm textarea {
+    width: 360px;
+    resize: none;
+}
+
+#contactSubmit:active {
+    position: relative;
+    top: 1px;
+}
+
+#contactSubmit {
+    width: 100px;
+    cursor: pointer;
+    background-color: #fbf9f4;
+}
+
+/* My projects page */
+
+.projectBoxs {
+    position: relative;
+    padding: 20px;
+    box-shadow: 3px 3px 5px #cecece;
+    border: 1px solid #d0d0d0;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+#sourceLink {
+    top: 45px;
+    left: 230px;
+    position: absolute;
+}
+
+.projectTitle {
+    float: left;
+    font-size: 24px;
+    padding: 35px;
+    border-right: 1px solid #cccccc;
+    border-radius: 50px;
+}
+
+.projectArrow {
+    float: left;
+    border-top: 1px solid #cccccc;
+    width: 350px;
+    margin-top: 50px;
+}
+
+.projectSBoxs {
+    float: left;
+    width: 320px;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #f5f5eb;
+    border: 1px solid #d0d0d0;
+}
+
+/* Archive page */
+
+#archive, #events {
+    float: left;
+}
+
+#events {
+    position: relative;
+    width: 739px;
+    margin-left: 100px;
+}
+
+#eventsBox {
+    overflow: Auto;
+    text-align: center;
+}
+
+.eventsBoxs {
+    position: relative;
+}
+
+/* Date and positions */
+
+.eventDateRightBottom {
+    position: absolute;
+    left: 90px;
+    top: 50px;
+    color: #858585;
+}
+
+.eventDateRightTop {
+    position: absolute;
+    left: 90px;
+    top: 50px;
+    color: #858585;
+}
+
+.eventDateLeftBottom {
+    position: absolute;
+    left: -100px;
+    top: 80px;
+    color: #858585;
+}
+
+/* SubBoxs of events */
+
+.eventsSubBoxs:hover {
+    box-shadow: 0px 0px 20px gray;
+}
+
+.eventsSubBoxs {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 60px;
+    border: 5px solid white;
+    box-shadow: 0px 0px 5px gray;
+    transition: box-shadow .30s ease-in-out;
+}
+
+.hEvent {
+    font-size: 40px;
+    color: white;
+    margin: 0;
+}
+
+/* A box with info of event clicked */
+
+.evInfoSlide {
+    display: none;
+}
+
+.evInfo {
+    z-index: 1;
+    position: absolute;
+    border: 1px solid #b5b5b5;
+    background-color: #f5f5eb;
+}
+
+.evInfoSudEst {
+    z-index: 1;
+    left: 100px;
+    top: 80px;
+    position: absolute;
+    border: 1px solid #b5b5b5;
+    background-color: #f5f5eb;
+}
+
+.evInfoNordEst {
+    z-index: 1;
+    left: 30px;
+    bottom: 100px;
+    position: absolute;
+    border: 1px solid #b5b5b5;
+    background-color: #f5f5eb;
+}
+
+.evInfoTitle, .evInfoText {
+    text-align: center;
+    color: #6a6a6a;
+    margin-top: 5px;
+}
+
+.evInfoTitle {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.evInfoText {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Lines and positions */
+
+.evObliqueSudEst {
+    position: absolute;
+    left: 70px;
+    bottom: -40px;
+    width: 80px;
+    height: 60px;
+    border-bottom-right-radius: 60px;
+    border-bottom: 1px solid #b5b5b5;
+    -ms-transform: rotate(60deg); /* IE 9 */
+    -webkit-transform: rotate(60deg); /* Safari */
+    transform: rotate(60deg); /* Standard syntax */
+}
+
+.evObliqueSudOvest {
+    position: absolute;
+    left: -50px;
+    bottom: -40px;
+    width: 100px;
+    height: 60px;
+    border-bottom-right-radius: 60px;
+    border-bottom: 1px solid #b5b5b5;
+    -ms-transform: rotate(140deg); /* IE 9 */
+    -webkit-transform: rotate(140deg); /* Safari */
+    transform: rotate(140deg); /* Standard syntax */
+}
+
+.evObliqueNordOvest {
+    position: absolute;
+    left: -70px;
+    bottom: 30px;
+    width: 80px;
+    height: 70px;
+    border-bottom-right-radius: 60px;
+    border-bottom: 1px solid #b5b5b5;
+    border-right: 1px solid #b5b5b5;
+    -ms-transform: rotate(-150deg); /* IE 9 */
+    -webkit-transform: rotate(-150deg); /* Safari */
+    transform: rotate(-150deg); /* Standard syntax */
+}
+
+.evObliqueNordEst {
+    position: absolute;
+    left: 40px;
+    bottom: 80px;
+    width: 80px;
+    height: 60px;
+    border-bottom-right-radius: 60px;
+    border-bottom: 1px solid #b5b5b5;
+    -ms-transform: rotate(-40deg); /* IE 9 */
+    -webkit-transform: rotate(-40deg); /* Safari */
+    transform: rotate(-40deg); /* Standard syntax */
+}
+
+.evRightTop {
+    z-index: 1;
+    position: absolute;
+    border-bottom: 1px solid #b5b5b5;
+    border-right: 1px solid #b5b5b5;
+    width: 270px;
+    height: 60px;
+    border-bottom-right-radius: 60px;
+    bottom: 40px;
+    left: 80px;
+}
+
+.evTopLeft {
+    z-index: 1;
+    position: absolute;
+    border-top: 1px solid #b5b5b5;
+    border-right: 1px solid #b5b5b5;
+    width: 270px;
+    height: 60px;
+    border-top-right-radius: 60px;
+    bottom: 80px;
+    left: -230px;
+}
+
+/* Library */
+
+#archive {
+    display: none;
+    padding: 4px;
+    overflow: Auto;
+    float: left;
+    width: 162px;
+    text-align: center;
+    border-right: 0;
+}
+
+#archive p.h15 {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.folders {
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.folders p {
+    margin: 0;
+    margin-top: 5px;
+}
+
+.linux {
+    display: none;
+}
+
+#documents {
+    z-index: 2;
+    display: none;
+    overflow: Auto;
+    height: 500px;
+    position: absolute;
+    top: -1px; left: -1px;
+    padding: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 600px;
+    margin-bottom: 25px;
+    border: 1px solid #7D460F;
+    box-shadow: 5px 5px 20px gray;
+    font: 16px helvetica, sans-serif;
+}
+
+#documentsExit:hover {
+    background-color: rgba(209,117,25,0.4);
+}
+
+#documentsExit {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,0.2);
+    transition: background-color .50s ease-in-out;
+}
+
+footer {
+    height: 50px;
+    clear: both;
+}
+
+#push {
+    height: 100px;
+}
+
+#subFooter {
+    width: 900px;
+    margin: 0 auto;
+}
+
+#wnLink {
+    margin-top: 10px;
+    padding-bottom: 20px;
+    margin-right: 500px;
+    margin-left: 50px;
+}
