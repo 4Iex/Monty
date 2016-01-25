@@ -18,6 +18,6 @@ from My_app import views
 
 urlpatterns = [
     url(r'^$', views.home ),
-    url(r'^templ/', views.templ),
+    url(r'^home/', views.home ),
     url(r'', views.not_found ),
 ]
