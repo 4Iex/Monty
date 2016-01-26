@@ -6,15 +6,18 @@
  *  http://www.opensource.org/licenses/MIT
  */
 
-/* Class with property for buttons */
-
 body {
     margin: 0;
-    padding-top: 70px;
     font-family: 'Raleway', sans-serif;
     font-size: 17px;
-    position:relative;
     color: #4b4b4b;
+}
+
+#push { height: 70px }
+
+.content-not-found {
+    margin-top: 50px;
+    background-color: transparent;
 }
 
 #bs-example-navbar-collapse-1 {
@@ -22,107 +25,6 @@ body {
     margin: auto;
 }
 
-.cedoor-nav li {
-    margin-left: 100px;
+.cedoor-buttons-nav {
+    margin-left: 87px;
 }
-
-
-#profile {
-    margin-top: 5px;
-    height: 550px;
-    color: #4b4b4b;
-    border: 1px solid #dddddd;
-}
-#profile p {
-    color: #4b4b4b;
-}
-
-.links:hover {
-    border-color: #e2a64b;
-}
-
-.links {
-    text-align: center;
-    float: left;
-    margin-left: 43px;
-    margin-right: 43px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    border-bottom: 2px solid #dddddd;
-    border-top: 2px solid #dddddd;
-    transition: border-color .50s ease-in-out;
-}
-
-.links img {
-    height: 55px;
-}
-
-.links p {
-    margin: 0;
-}
-
-.profileBoxs {
-    float: left;
-    margin-top: 30px;
-    margin-left: 30px;
-    width: 280px;
-    height: 310px;
-    padding: 10px;
-    border: 1px solid #cccccc;
-}
-
-.profileBoxs p.h25 {
-    text-align: center;
-    margin-top: 0px;
-    margin-bottom: 15px;
-}
-
-.profileLine {
-    margin: 0;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.profileSubLine {
-    margin-left:30px;
-}
-
-.profileLineBrd {
-    padding-bottom: 10px;
-    border-bottom: 1px solid #dadada;
-}
-
-blockquote {
-    font: 15px/22px 'Raleway', sans-serif;
-    padding: 8px;
-    background-color: #f5f5eb;
-    border-top: 1px solid #ddddbb;
-    border-bottom: 1px solid #ddddbb;
-    margin: 5px;
-    background-image: url(../images/openquote1.gif);
-    background-position: top left;
-    background-repeat: no-repeat;
-    text-indent: 23px;
-}
-
- blockquote span {
-    display: block;
-    background-image: url(../images/closequote1.gif);
-    background-repeat: no-repeat;
-    background-position: bottom right;
- }
-
- .profileSkills {
-     font-size: 15px;
-     float: left;
-     padding: 6px;
-     margin: 4px;
-     padding-right: 12px;
-     padding-left: 12px;
-     background-color: #ececec;
-     border-radius: 10px;
-     border: 1px solid #d3d3d3;
- }
