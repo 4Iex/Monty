@@ -17,7 +17,7 @@ from django.conf.urls import url
 from My_app import views
 
 urlpatterns = [
-    url(r'^$', views.home ),
-    url(r'^home/', views.home ),
+    url(r'^profile/', views.profile ),
+    url(r'^$', views.profile ),
     url(r'', views.not_found ),
 ]
