@@ -12,19 +12,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <a class="navbar-brand glyphicon glyphicon-signal" href="/profile"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a class="cedoor-buttons-nav" href="/profile/">Profile</a></li>
-                    <li><a class="cedoor-buttons-nav" href="#">Blog</a></li>
-                    <li><a class="cedoor-buttons-nav" href="#">Projects</a></li>
-                    <li><a class="cedoor-buttons-nav" href="#">Contactme</a></li>
+                    <li><a class="cedoor-btn-nav {% block header_btn1 %} {% endblock %}" href="/profile">Profile</a></li>
+                    <li><a class="cedoor-btn-nav {% block header_btn2 %} {% endblock %}" href="#">Blog</a></li>
+                    <li><a class="cedoor-btn-nav {% block header_btn3 %} {% endblock %}" href="#">Projects</a></li>
+                    <li><a class="cedoor-btn-nav {% block header_btn4 %} {% endblock %}" href="#">Contactme</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div id="push"><div>
+    <div id="below-header">
+        {% load staticfiles %}
+        <img alt="Brand" src="{% static "img/sadSmile.png" %}">
+        <span style="margin-left: 80px" class="hidden-xs h1">Omar Desogus</span>
+    </div>
 </header>
 {% endblock %}

@@ -9,11 +9,15 @@
 body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
-    font-size: 17px;
+    font-size: 18px;
     color: #4b4b4b;
+    padding-top: 50px;
 }
 
-#push { height: 70px }
+header {
+	-webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, .075);
+          	box-shadow: inset 0 3px 9px rgba(0, 0, 0, .075);
+}
 
 .content-not-found {
     margin-top: 50px;
@@ -21,10 +25,30 @@ body {
 }
 
 #bs-example-navbar-collapse-1 {
-    max-width: 800px;
+    max-width: 750px;
     margin: auto;
 }
 
-.cedoor-buttons-nav {
-    margin-left: 87px;
+@media (min-width: 768px)
+.navbar-nav {
+    float: left;
+    margin: 0;
+}
+
+.cedoor-btn-nav {
+    margin-left: 80px;
+}
+
+.crnt_btn_nav {
+	text-decoration: underline;
+}
+
+#below-header {
+	color: #737373;
+	text-align: center;
+	background-image: -webkit-linear-gradient(top, rgb(250,250,250) 0%, rgb(245,245,245) 100%);
+  	background-image:      -o-linear-gradient(top, rgb(250,250,250) 0%, rgb(245,245,245) 100%);
+  	background-image: -webkit-gradient(linear, left top, left bottom, fromrgb(250,250,250)), torgb(245,245,245)));
+  	background-image:         linear-gradient(to bottom, rgb(250,250,250) 0%, rgb(245,245,245) 100%);
+  	border-bottom: 1px solid #d9d9d9;
 }
