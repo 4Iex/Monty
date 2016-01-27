@@ -18,6 +18,7 @@ from .My_app import views
 
 urlpatterns = [
     url(r'^profile$', views.profile ),
+    url(r'^blog$', views.blog ),
     url(r'^$', views.profile ),
     url(r'', views.not_found ),
 ]
