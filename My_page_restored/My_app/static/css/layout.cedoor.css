@@ -9,7 +9,7 @@
 body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     color: #4b4b4b;
     padding-top: 50px;
 }
@@ -29,10 +29,8 @@ header {
     margin: auto;
 }
 
-@media (min-width: 768px)
-.navbar-nav {
-    float: left;
-    margin: 0;
+.cedoorLinks i {
+    color: #808080;   
 }
 
 .cedoor-btn-nav {
