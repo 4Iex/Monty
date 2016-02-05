@@ -4,4 +4,4 @@ from django.apps import AppConfig
 
 
 class MyAppConfig(AppConfig):
-    name = 'My_app'
+    name = 'Monty_app'

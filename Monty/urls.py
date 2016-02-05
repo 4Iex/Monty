@@ -1,10 +1,10 @@
-"""My_page_restored URL Configuration
+"""Monty URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
 Examples:
 Function views
-    1. Add an import:  from my_app import views
+    1. Add an import:  from Monty_app import views
     2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
 Class-based views
     1. Add an import:  from other_app.views import Home
@@ -14,11 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from .My_app import views
+from .Monty_app import views
 
 urlpatterns = [
-    url(r'^profile$', views.profile ),
-    url(r'^blog$', views.blog ),
-    url(r'^$', views.profile ),
+    url(r'^$', views.show_results ),
+    url(r'^/script/', views.execute_script ),
     url(r'', views.not_found ),
 ]
