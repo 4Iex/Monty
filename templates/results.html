@@ -15,7 +15,7 @@
                 </thead>
                 <tbody>
                     {% for result in results %}
-                        {% if  result.result == "true" %}
+                        {% if  result.result == "true" or result.result == "True" %}
                             <tr class="success">
                         {% else %}
                             <tr class="danger">
@@ -23,7 +23,7 @@
                             <td>{{ forloop.counter }}</td>
                             <td>{{ result.title }}</td>
                                 <td>
-                                    {% if result.result == "true" %}
+                                    {% if result.result == "true" or result.result == "True" %}
                                         <strong>PASSED</strong>
                                     {% elif result.result == "untested" %}
                                         <strong>UNTESTED</strong>

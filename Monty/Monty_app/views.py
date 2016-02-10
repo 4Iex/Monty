@@ -10,7 +10,7 @@ def not_found(request):
     return render_to_response("not_found.html")
 
 def show_results(request):
-    with open(os.getcwd()+'/docs/audit.json') as data_file:
+    with open(os.getcwd()+'/docs/results.json') as data_file:
         scan_results = json.load(data_file)
 
     return render_to_response('results.html',scan_results)

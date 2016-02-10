@@ -1,0 +1,130 @@
+{
+    "results":  [
+                    {
+                        "expected":  "12.0.2560.0",
+                        "title":  "Latest SQL Server Service Packs and Hotfixes",
+                        "result":  "True",
+                        "audit":  "SELECT SERVERPROPERTY(\u0027ProductVersion\u0027) as Version;"
+                    },
+                    {
+                        "expected":  "0",
+                        "title":  " \u0027Ad Hoc Distributed Queries\u0027 Server Configuration Option to 0",
+                        "result":  "True",
+                        "audit":  "SELECT name, CAST(value as int) as value_configured, CAST(value_in_use as int) as value_in_use FROM sys.configurations WHERE name = \u0027ad hoc distributed queries\u0027;"
+                    },
+                    {
+                        "expected":  "0",
+                        "title":  "‘CLR Enabled\u0027 Server Configuration Option to 0",
+                        "result":  "True",
+                        "audit":  "SELECT name, CAST(value as int) as value_configured, CAST(value_in_use as int) as value_in_use FROM sys.configurations WHERE name = \u0027clr enabled\u0027;"
+                    },
+                    {
+                        "expected":  "0",
+                        "title":  "\u0027Cross DB Ownership Chaining\u0027 Server Configuration Option to 0 ",
+                        "result":  "True",
+                        "audit":  "SELECT name, CAST(value as int) as value_configured, CAST(value_in_use as int) as value_in_use FROM sys.configurations WHERE name = \u0027Cross db ownership chaining\u0027;"
+                    },
+                    {
+                        "expected":  "0",
+                        "title":  "\u0027Database Mail XPs\u0027 Server Configuration Option to 0",
+                        "result":  "True",
+                        "audit":  "SELECT name, CAST(value as int) as value_configured, CAST(value_in_use as int) as value_in_use FROM sys.configurations WHERE name = \u0027Database Mail XPs\u0027; "
+                    },
+                    {
+                        "expected":  "0",
+                        "title":  "\u0027Ole Automation Procedures\u0027 Server Configuration Option to 0",
+                        "result":  "True",
+                        "audit":  "SELECT name, CAST(value as int) as value_configured, CAST(value_in_use as int) as value_in_use FROM sys.configurations WHERE name = \u0027Ole Automation Procedures\u0027;"
+                    },
+                    {
+                        "expected":  "0",
+                        "title":  "\u0027Remote Access\u0027 Server Configuration Option to 0",
+                        "result":  "True",
+                        "audit":  "SELECT name, CAST(value as int) as value_configured, CAST(value_in_use as int) as value_in_use FROM sys.configurations WHERE name = \u0027Remote access\u0027;"
+                    },
+                    {
+                        "expected":  "0",
+                        "title":  "\u0027Remote Admin Connections\u0027 Server Configuration Option to 0",
+                        "result":  "True",
+                        "audit":  "USE master; SELECT name, CAST(value as int) as value_configured, CAST(value_in_use as int) as value_in_use FROM sys.configurations WHERE name = \u0027Remote admin connections\u0027 AND SERVERPROPERTY(\u0027IsClustered\u0027) = 0;"
+                    },
+                    {
+                        "expected":  "0",
+                        "title":  "\u0027Scan For Startup Procs\u0027 Server Configuration Option to 0",
+                        "result":  "True",
+                        "audit":  "SELECT name, CAST(value as int) as value_configured, CAST(value_in_use as int) as value_in_use FROM sys.configurations WHERE name = \u0027Scan for startup procs\u0027;"
+                    },
+                    {
+                        "expected":  "sa",
+                        "title":  "Disable the \u0027sa\u0027 Login Account",
+                        "result":  "False",
+                        "audit":  "SELECT name, is_disabled FROM sys.server_principals WHERE sid = 0x01; "
+                    },
+                    {
+                        "expected":  "sa",
+                        "title":  "Rename the \u0027sa\u0027 Login Account",
+                        "result":  "False",
+                        "audit":  "SELECT name FROM sys.server_principals WHERE sid = 0x01;"
+                    },
+                    {
+                        "expected":  "null",
+                        "title":  "AUTO_CLOSE OFF on contained databases",
+                        "result":  "False",
+                        "audit":  "SELECT name, containment, containment_desc, is_auto_close_on FROM sys.databases WHERE containment \u003c\u003e 0 and is_auto_close_on = 1;"
+                    },
+                    {
+                        "expected":  "login mode",
+                        "title":  "Set The \u0027Server Authentication\u0027 Property To Windows Authentication mode",
+                        "result":  "False",
+                        "audit":  "xp_loginconfig \u0027login mode\u0027;"
+                    },
+                    {
+                        "expected":  "null",
+                        "title":  " Revoke CONNECT permissions on the \u0027guest user\u0027 within all SQL Server databases excluding the master, msdb and tempdb (Scored)",
+                        "result":  "False",
+                        "audit":  "USE testDB; SELECT DB_NAME() AS DBName, dpr.name, dpe.permission_name FROM sys.database_permissions dpe JOIN sys.database_principals dpr ON dpe.grantee_principal_id=dpr.principal_id WHERE dpr.name=\u0027guest\u0027 AND dpe.permission_name=\u0027CONNECT\u0027;"
+                    },
+                    {
+                        "expected":  "null",
+                        "title":  "Drop Orphaned Users From SQL Server Databases",
+                        "result":  "False",
+                        "audit":  "EXEC sp_change_users_login @Action=\u0027Report\u0027;"
+                    },
+                    {
+                        "expected":  "null",
+                        "title":  "Do not use SQL Authentication in contained databases",
+                        "result":  "False",
+                        "audit":  "SELECT name AS DBUser FROM sys.database_principals WHERE name NOT IN (\u0027dbo\u0027,\u0027Information_Schema\u0027,\u0027sys\u0027,\u0027guest\u0027) AND type IN (\u0027U\u0027,\u0027S\u0027,\u0027G\u0027) AND authentication_type = 2;"
+                    },
+                    {
+                        "expected":  "null",
+                        "title":  "Set the \u0027CHECK_EXPIRATION\u0027 Option to ON for All SQL Authenticated Logins Within the Sysadmin Role",
+                        "result":  "True",
+                        "audit":  "SELECT SQLLoginName = sp.name FROM sys.server_principals sp JOIN sys.sql_logins AS sl ON sl.principal_id = sp.principal_id WHERE sp.type_desc = \u0027SQL_LOGIN\u0027 AND sp.name in (SELECT name AS IsSysAdmin FROM sys.server_principals p WHERE IS_SRVROLEMEMBER(\u0027sysadmin\u0027,name) = 1) AND sl.is_expiration_checked \u003c\u003e 1;"
+                    },
+                    {
+                        "expected":  "1",
+                        "title":  "Set the \u0027CHECK_POLICY\u0027 Option to ON for All SQL Authenticated Logins",
+                        "result":  "True",
+                        "audit":  "SELECT SQLLoginName = sp.name, PasswordPolicyEnforced = CAST(sl.is_policy_checked AS BIT) FROM sys.server_principals sp JOIN sys.sql_logins AS sl ON sl.principal_id = sp.principal_id WHERE sp.type_desc = \u0027SQL_LOGIN\u0027; "
+                    },
+                    {
+                        "expected":  "1",
+                        "title":  "Set the \u0027Default Trace Enabled\u0027 Server Configuration Option to 1",
+                        "result":  "True",
+                        "audit":  "SELECT name, CAST(value as int) as value_configured, CAST(value_in_use as int) as value_in_use FROM sys.configurations WHERE name = \u0027Default trace enabled\u0027; "
+                    },
+                    {
+                        "expected":  "all",
+                        "title":  " Set \u0027Login Auditing\u0027 to Both failed and successful logins",
+                        "result":  "True",
+                        "audit":  " XP_loginconfig \u0027audit level\u0027;"
+                    },
+                    {
+                        "expected":  "",
+                        "title":  "Set the \u0027CLR Assembly Permission Set\u0027 to SAFE_ACCESS for All CLR Assemblies ",
+                        "result":  "False",
+                        "audit":  "SELECT name, permission_set_desc FROM sys.assemblies where is_user_defined = 1;"
+                    }
+                ]
+}
