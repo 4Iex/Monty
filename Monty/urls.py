@@ -18,6 +18,6 @@ from .Monty_app import views
 
 urlpatterns = [
     url(r'^$', views.show_results ),
-    url(r'^/script/', views.execute_script ),
+    url(r'^/script', views.execute_script ),
     url(r'', views.not_found ),
 ]

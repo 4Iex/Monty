@@ -12,9 +12,7 @@ def not_found(request):
 def show_results(request):
     with open(os.getcwd()+'/docs/results.json') as data_file:
         scan_results = json.load(data_file)
-
     return render_to_response('results.html',scan_results)
 
 def execute_script(request):
     return render_to_response('results.html')
-
